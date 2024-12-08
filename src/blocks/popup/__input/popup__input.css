@@ -10,8 +10,32 @@
   margin-bottom: 10px;
 }
 
+.popup__input_type_error {
+  border-bottom-color: red;
+}
+
 .popup__input:last-of-type {
   margin-bottom: 0;
+}
+.input_error{
+  display: none;
+}
+
+.popup__error_visible{
+font-size: 12px;
+color: red;
+position: absolute;
+inset: 0;
+display: inline-block;
+}
+
+
+.error_container{
+  position: relative;
+}
+
+.error_container:first-of-type{
+  transform: translateY(-10px);
 }
 
 @media screen and (max-width: 568px) {
