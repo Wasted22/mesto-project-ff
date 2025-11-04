@@ -20,6 +20,7 @@ export function enableValidation(validationConfig){
     function showInputError(formElement, inputElement, errorMessage){
         const errorElement = formElement.querySelector(`.${inputElement.id}_error`);
         inputElement.classList.add(validationConfig.inputErrorClass);
+        console.log(errorMessage);
         errorElement.textContent = errorMessage;
         errorElement.classList.add(validationConfig.errorClass)
     }
@@ -68,7 +69,7 @@ export function enableValidation(validationConfig){
         toggleButtonState(inputList, buttonElement)
         inputList.forEach((inputElement)=>{
             inputElement.addEventListener('input', ()=>{
-                console.log('a');
+
                 isValid(formElement, inputElement)
                 toggleButtonState(inputList, buttonElement)
             })
