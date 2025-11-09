@@ -32,7 +32,6 @@ const profileTitle = document.querySelector('.profile__title');
 const profileJob = document.querySelector('.profile__description');
 const profileImage = document.querySelector('.profile__image');
 
-
 enableValidation(validationConfig);
 
 Promise.all([getCards(), getUser()])
@@ -67,22 +66,18 @@ allPopup.forEach((popup) => {
 buttonEditProfile.addEventListener('click', ()=>{
     openModal(popupEditProfile);
     fillingForm();
-    const profileForm = popupEditProfile.querySelector('.popup__form');
-    clearValidation(profileForm, validationConfig);
+    clearValidation(formElementProfile, validationConfig);
 });
 
 buttonNewCard.addEventListener('click', ()=>{
     clearForm();
-    const profileForm = popupNewCard.querySelector('.popup__form');
-    clearValidation(profileForm, validationConfig);
+    clearValidation(formAddCard, validationConfig);
     openModal(popupNewCard)
   });
 
   profileImage.addEventListener('click', ()=>{
-
-    const profileForm = popupEditAvatar.querySelector('.popup__form');
     clearForm();
-    clearValidation(profileForm, validationConfig);
+    clearValidation(formElementProfile, validationConfig);
     openModal(popupEditAvatar);
   })
     
